@@ -1,0 +1,35 @@
+.skills-list-container {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.job-details-container {
+  padding: 10px;
+}
+.similar-jobs-container {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.similar-jobs-list-item {
+  width: 400px;
+  padding: 10px;
+  margin: 20px;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+.life-at-comapany {
+  display: flex;
+  justify-content: space-around;
+}
+.visit-link {
+  align-self: flex-end;
+  text-decoration: none;
+  font-size: 20px;
+}
+.visit-link-container {
+  text-align: end;
+  margin-right: 20px;
+}

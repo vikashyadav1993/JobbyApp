@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Header from '../Header'
+import './index.css'
 
 class JobItemDetails extends Component {
   state = {
@@ -82,7 +83,7 @@ class JobItemDetails extends Component {
   getSkills = () => {
     const {setSkills} = this.state
     return (
-      <ul>
+      <ul className="skills-list-container">
         {setSkills.map(item => (
           <li>
             <img src={item.imageUrl} alt={item.name} />
@@ -98,9 +99,9 @@ class JobItemDetails extends Component {
     return (
       <div>
         <h1>Similar Jobs</h1>
-        <ul>
+        <ul className="similar-jobs-container">
           {similarJobDetails.map(item => (
-            <li>
+            <li className="similar-jobs-list-item">
               <img src={item.companyLogoUrl} alt={item.title} />
               <h1>{item.title}</h1>
               <p>{item.rating}</p>
@@ -139,13 +140,20 @@ class JobItemDetails extends Component {
         <p>{packagePerAnnum}</p>
         <hr />
         <p>Description</p>
-        <a href={companyWebsiteUrl}>Visit</a>
+        <div className="visit-link-container">
+          <a href={companyWebsiteUrl} className="visit-link">
+            Visit
+          </a>
+        </div>
         <p>{jobDescription}</p>
         <h1>Skills</h1>
         {this.getSkills()}
         <h1>Life at Company</h1>
-        <p>{companyLife.description}</p>
-        <img src={companyLife.imageUrl} alt={title} />
+        <div className="life-at-comapany">
+          {' '}
+          <p>{companyLife.description}</p>
+          <img src={companyLife.imageUrl} alt={title} />
+        </div>
         {this.getsimilarJobs()}
       </div>
     )
@@ -181,13 +189,17 @@ class JobItemDetails extends Component {
     return (
       <div>
         <Header />
-        {isLoading === true ? (
-          this.loader()
-        ) : (
-          <>
-            {apiStatus !== 'FAILURE' ? this.topContainer() : this.failureView()}
-          </>
-        )}
+        <div className="job-details-container">
+          {isLoading === true ? (
+            this.loader()
+          ) : (
+            <>
+              {apiStatus !== 'FAILURE'
+                ? this.topContainer()
+                : this.failureView()}
+            </>
+          )}
+        </div>
       </div>
     )
   }

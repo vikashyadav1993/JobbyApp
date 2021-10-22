@@ -220,16 +220,16 @@ class Jobs extends Component {
     } = item
 
     return (
-      <li key={id}>
+      <li key={id} className="each-job-container">
         <Link to={`jobs/${id}`} className="each-job-link">
           <div>
             <img src={companyLogoUrl} alt={title} />
             <h1>{title}</h1>
             <p>{rating}</p>
           </div>
-          <p>
-            {location}
-            {employmentType}
+          <p className="location-package-container">
+            <span>{location}</span>
+            <span>{employmentType}</span>
             <span>{Package}</span>
           </p>
           <hr />
@@ -246,6 +246,8 @@ class Jobs extends Component {
         src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
         alt="no jobs"
       />
+      <h1>No Jobs Found</h1>
+      <p>We could not find any jobs. Try other filters.</p>
     </div>
   )
 
@@ -309,7 +311,7 @@ class Jobs extends Component {
             ) : (
               <div>
                 {profileApiError === true ? (
-                  <button type="button" onClick={this.getProfile()}>
+                  <button type="button" onClick={this.getProfile}>
                     Retry
                   </button>
                 ) : (
@@ -321,15 +323,17 @@ class Jobs extends Component {
             {this.getSalaryRange()}
           </div>
           <div>
-            <div>
-              <input type="search" onChange={this.updateSearch} />
-              <button
-                type="button"
-                testid="searchButton"
-                onClick={this.getSearch}
-              >
-                <BsSearch className="search-icon" />
-              </button>
+            <div className="all-jobs-container">
+              <div className="search-container">
+                <input type="search" onChange={this.updateSearch} />
+                <button
+                  type="button"
+                  testid="searchButton"
+                  onClick={this.getSearch}
+                >
+                  <BsSearch className="search-icon" />
+                </button>
+              </div>
               {isJobsLoading === true ? (
                 this.loader()
               ) : (

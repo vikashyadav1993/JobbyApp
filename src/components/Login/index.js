@@ -57,7 +57,12 @@ class Login extends Component {
           />
           <form onSubmit={this.formSubmit} className="form-container">
             <label htmlFor="username">USERNAME</label>
-            <input type="text" id="username" onChange={this.updateUsername} />
+            <input
+              type="text"
+              id="username"
+              onChange={this.updateUsername}
+              placeholder="Username"
+            />
 
             <label htmlFor="password">PASSWORD</label>
             <input
