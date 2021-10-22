@@ -1,0 +1,30 @@
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #272727;
+}
+.login-card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #cbd5e1;
+  padding: 10px;
+  width: 20vw;
+  height: 40vh;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+.website-logo {
+  height: 80px;
+  width: 100px;
+  align-self: center;
+}
+.login-button {
+  background-color: aqua;
+}

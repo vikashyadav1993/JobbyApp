@@ -1,0 +1,23 @@
+.profile-details-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  width: 200px;
+  padding: 10px;
+}
+
+.employment-type-list-container {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.salary-range-list-container {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.jobs-container {
+  display: flex;
+}
+.jobs-list-container {
+  list-style-type: none;
+}
+.each-job-link {
+  text-decoration: none;
+}
